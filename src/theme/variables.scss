@@ -1,2 +1,88 @@
-// For information on how to create your own theme, please refer to:
-// https://ionicframework.com/docs/theming/
+:root {
+  /** Colores principales **/
+  --ion-color-primary: #00ff88;
+  --ion-color-primary-rgb: 0, 255, 136;
+  --ion-color-primary-contrast: #000000;
+  --ion-color-primary-contrast-rgb: 0, 0, 0;
+  --ion-color-primary-shade: #00e676;
+  --ion-color-primary-tint: #33ffa0;
+
+  --ion-color-secondary: #00cc66;
+  --ion-color-secondary-rgb: 0, 204, 102;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #00b359;
+  --ion-color-secondary-tint: #33d98c;
+
+  --ion-color-tertiary: #00994d;
+  --ion-color-tertiary-rgb: 0, 153, 77;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ion-color-tertiary-shade: #008040;
+  --ion-color-tertiary-tint: #33ad73;
+
+  --ion-color-success: #00ff66;
+  --ion-color-warning: #ffd633;
+  --ion-color-danger: #ff4d4d;
+  --ion-color-dark: #001a00;
+  --ion-color-medium: #006633;
+  --ion-color-light: #ccffcc;
+
+  /** Fondo y textos **/
+  --ion-background-color: linear-gradient(135deg, #000, #003300);
+  --ion-text-color: #ffffff;
+
+  /** Componentes **/
+  --ion-toolbar-background: linear-gradient(135deg, #004d1a, #00ff88);
+  --ion-toolbar-color: #fff;
+
+  --ion-item-background: rgba(255, 255, 255, 0.08);
+  --ion-item-color: #ffffff;
+
+  --ion-button-background: #00ff88;
+  --ion-button-color: #000;
+  --ion-button-hover-background: #33ffa0;
+  --ion-button-hover-color: #000;
+  --ion-button-box-shadow: 0 0 12px rgba(0, 255, 136, 0.6);
+
+  --ion-card-background: rgba(0, 51, 25, 0.7);
+  --ion-card-color: #fff;
+  --ion-card-box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+}
+
+/*** 🌘 Tema oscuro (automático) ***/
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ion-background-color: linear-gradient(135deg, #001a00, #004d1a);
+    --ion-text-color: #e8ffe8;
+    --ion-item-background: rgba(0, 0, 0, 0.5);
+    --ion-card-background: rgba(0, 0, 0, 0.7);
+    --ion-toolbar-background: linear-gradient(135deg, #003300, #00cc66);
+  }
+}
+
+/*** ✨ Efectos globales de animación ***/
+ion-content {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+ion-item:hover {
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.25);
+}
+
+ion-button {
+  transition: all 0.25s ease;
+  box-shadow: var(--ion-button-box-shadow);
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 136, 0.8);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

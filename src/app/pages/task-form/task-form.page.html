@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Nueva Tarea</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <ion-item>
+      <ion-label position="floating">Título *</ion-label>
+      <ion-input formControlName="titulo"></ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="form.get('titulo')?.touched && form.get('titulo')?.invalid">Título requerido</ion-note>
+
+    <ion-item>
+      <ion-label position="floating">Materia *</ion-label>
+      <ion-input formControlName="materia"></ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="form.get('materia')?.touched && form.get('materia')?.invalid">Materia requerida</ion-note>
+
+    <ion-item>
+      <ion-label position="floating">Fecha vencimiento *</ion-label>
+      <ion-datetime presentation="date" formControlName="fechaVencimiento"></ion-datetime>
+    </ion-item>
+    <ion-note color="danger" *ngIf="form.get('fechaVencimiento')?.touched && form.get('fechaVencimiento')?.invalid">Fecha requerida</ion-note>
+
+    <ion-item>
+      <ion-label>Prioridad</ion-label>
+      <ion-segment formControlName="prioridad">
+        <ion-segment-button value="alta">Alta</ion-segment-button>
+        <ion-segment-button value="media">Media</ion-segment-button>
+        <ion-segment-button value="baja">Baja</ion-segment-button>
+      </ion-segment>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Descripción</ion-label>
+      <ion-textarea formControlName="descripcion"></ion-textarea>
+    </ion-item>
+
+    <ion-button expand="full" type="submit" class="ion-margin-top">Guardar</ion-button>
+  </form>
+</ion-content>

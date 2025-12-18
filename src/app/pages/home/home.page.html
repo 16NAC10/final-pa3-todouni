@@ -1,0 +1,38 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>TodoUni - Tareas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-item>
+      <ion-label>Materia:</ion-label>
+      <ion-select [(ngModel)]="filterMateria" interface="popover">
+        <ion-select-option value="todas">Todas</ion-select-option>
+        <ion-select-option *ngFor="let m of materias" [value]="m">{{ m }}</ion-select-option>
+      </ion-select>
+      <ion-segment [(ngModel)]="filterCompletada" class="ml-segment">
+        <ion-segment-button value="todas">Todas</ion-segment-button>
+        <ion-segment-button value="completas">Completas</ion-segment-button>
+        <ion-segment-button value="incompletas">Incompletas</ion-segment-button>
+      </ion-segment>
+    </ion-item>
+  </ion-card>
+
+  <ion-list *ngIf="!loading">
+    <ion-item *ngFor="let task of filteredTasks" (click)="openDetail(task)" button lines="none">
+      <ion-checkbox slot="start" [checked]="task.completada" (ionChange)="toggleCompleted(task); $event.stopPropagation()"></ion-checkbox>
+      <ion-label [class.tachado]="task.completada">
+        <h2>{{ task.titulo }}</h2>
+        <p>{{ task.materia }} • vence: {{ task.fechaVencimiento }}</p>
+      </ion-label>
+      <ion-badge [ngClass]="prioridadClass(task.prioridad)">{{ task.prioridad }}</ion-badge>
+      <ion-button fill="clear" slot="end" (click)="confirmDelete(task); $event.stopPropagation()">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-spinner *ngIf="loading"></ion-spinner>
+</ion-content>

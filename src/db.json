@@ -1,16 +1,16 @@
 {
   "tasks": [
     {
-      "id": 1,
+      "id": "1",
       "titulo": "Examen de Física II",
       "materia": "Física II",
       "fechaVencimiento": "2025-12-15",
       "prioridad": "alta",
-      "completada": false,
+      "completada": true,
       "descripcion": "Repasar capítulos 8 al 12"
     },
     {
-      "id": 2,
+      "id": "2",
       "titulo": "Trabajo práctico - Algoritmos",
       "materia": "Algoritmos",
       "fechaVencimiento": "2025-11-30",
@@ -19,7 +19,7 @@
       "descripcion": "Implementar algoritmo de ordenamiento"
     },
     {
-      "id": 3,
+      "id": "3",
       "titulo": "Lectura: Teoría de Sistemas",
       "materia": "Sistemas",
       "fechaVencimiento": "2025-12-05",
@@ -28,7 +28,7 @@
       "descripcion": "Capítulos 1 a 3"
     },
     {
-      "id": 4,
+      "id": "4",
       "titulo": "Entrega informe laboratorio",
       "materia": "Química",
       "fechaVencimiento": "2025-11-25",
@@ -37,7 +37,7 @@
       "descripcion": "Informe de la práctica 4"
     },
     {
-      "id": 5,
+      "id": "5",
       "titulo": "Preparar presentación oral",
       "materia": "Economía",
       "fechaVencimiento": "2025-12-01",

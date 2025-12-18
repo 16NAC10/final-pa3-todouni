@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalle / Editar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" *ngIf="task">
+  <form [formGroup]="form" (ngSubmit)="save()">
+    <ion-item>
+      <ion-label position="floating">Título</ion-label>
+      <ion-input formControlName="titulo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Materia</ion-label>
+      <ion-input formControlName="materia"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Fecha vencimiento</ion-label>
+      <ion-datetime presentation="date" formControlName="fechaVencimiento"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Completada</ion-label>
+      <ion-toggle slot="end" formControlName="completada"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Descripción</ion-label>
+      <ion-textarea formControlName="descripcion"></ion-textarea>
+    </ion-item>
+
+    <ion-button expand="full" type="submit" class="ion-margin-top">Guardar cambios</ion-button>
+
+    <ion-button
+      expand="block"
+      color="danger"
+      fill="outline"
+      (click)="deleteTask()"
+      class="ion-margin-top"
+    >
+      Eliminar tarea
+    </ion-button>
+
+  </form>
+</ion-content>

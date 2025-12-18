@@ -1,0 +1,26 @@
+.tachado {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+ion-badge.prioridad-alta {
+  background: var(--ion-color-danger-contrast);
+  color: var(--ion-color-danger);
+  border: 1px solid var(--ion-color-danger);
+}
+
+ion-badge.prioridad-media {
+  background: var(--ion-color-warning-contrast);
+  color: var(--ion-color-warning);
+  border: 1px solid var(--ion-color-warning);
+}
+
+ion-badge.prioridad-baja {
+  background: var(--ion-color-success-contrast);
+  color: var(--ion-color-success);
+  border: 1px solid var(--ion-color-success);
+}
+
+.ml-segment {
+  margin-left: 8px;
+}
